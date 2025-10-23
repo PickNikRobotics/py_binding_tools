@@ -3,18 +3,15 @@
   <name>py_binding_tools</name>
   <version>2.1.0</version>
   <description>Python binding tools for C++</description>
-
-  <author email="rhaschke@techfak.uni-bielefeld.de">Robert Haschke</author>
-  <maintainer email="rhaschke@techfak.uni-bielefeld.de">Robert Haschke</maintainer>
-
-  <license>BSD</license>
+  <maintainer email="support@picknik.ai">PickNik</maintainer>
+  <license>Proprietary</license>
 
   <url type="website">http://wiki.ros.org/py_binding_tools</url>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>ament_cmake_python</buildtool_depend>
 
-  <depend>pybind11_vendor</depend>
+  <depend>picknik_pybind11</depend>
   <depend>geometry_msgs</depend>
   <depend>rclcpp</depend>
 
