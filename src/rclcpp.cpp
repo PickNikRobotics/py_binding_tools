@@ -82,7 +82,7 @@ PYBIND11_MODULE(rclcpp, m)
   m.def("shutdown", &shutdown, "Shutdown rclcpp");
 
   using Class = rclcpp::NodeOptions;
-  py::class_<Class>(m, "NodeOptions")
+  py::classh<Class>(m, "NodeOptions")
       .def(InitFromKwargs<Class>())
       .def_property(
           "arguments", [](const Class& self) { return self.arguments(); },
@@ -110,7 +110,7 @@ PYBIND11_MODULE(rclcpp, m)
           [](const Class& self) { return self.automatically_declare_parameters_from_overrides(); },
           [](Class* self, bool value) { self->automatically_declare_parameters_from_overrides(value); });
 
-  py::class_<rclcpp::Node, rclcpp::Node::SharedPtr>(m, "Node")
+  py::classh<rclcpp::Node>(m, "Node")
       .def(py::init([](const std::string& name, const rclcpp::NodeOptions& opts) {
              auto node = std::make_shared<rclcpp::Node>(name, opts);
              add_node(node);
