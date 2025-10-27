@@ -44,9 +44,10 @@ jobs:
     name: "${{ matrix.distro }}${{ matrix.env.NAME && ' • ' || ''}}${{ matrix.env.NAME }}${{ matrix.env.CLANG_TIDY && ' • clang-tidy' || '' }}"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           submodules: recursive
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Cache ccache
         uses: rhaschke/cache@main
         with:
