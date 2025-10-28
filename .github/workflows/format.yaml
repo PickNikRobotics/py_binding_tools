@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-key: ${{ secrets.SSH_KEY }}
           submodules: recursive
       - name: Install clang-format
         run: sudo apt-get install clang-format
