@@ -48,6 +48,11 @@ jobs:
         with:
           submodules: recursive
           ssh-key: ${{ secrets.SSH_KEY }}
+      - uses: actions/checkout@v5
+        with:
+          repository: "PickNikRobotics/pybind11"
+          submodules: recursive
+          ssh-key: ${{ secrets.PYBIND_SSH_KEY }}
       - name: Cache ccache
         uses: rhaschke/cache@main
         with:
