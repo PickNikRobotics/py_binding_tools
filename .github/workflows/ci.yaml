@@ -51,8 +51,8 @@ jobs:
           ssh-key: ${{ secrets.SSH_KEY }}
       - uses: actions/checkout@v5
         with:
-          path: "pybind11"
-          repository: "PickNikRobotics/pybind11"
+          path: "picknik_pybind11"
+          repository: "PickNikRobotics/picknik_pybind11"
           submodules: recursive
           ssh-key: ${{ secrets.PYBIND_SSH_KEY }}
       - name: Cache ccache
